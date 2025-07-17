@@ -92555,6 +92555,7 @@ namespace VULKAN_HPP_NAMESPACE
                                                          VULKAN_HPP_NAMESPACE::Bool32 pipelineProtectedAccess_                = {},
                                                          VULKAN_HPP_NAMESPACE::Bool32 pipelineRobustness_                     = {},
                                                          VULKAN_HPP_NAMESPACE::Bool32 hostImageCopy_                          = {},
+                                                         VULKAN_HPP_NAMESPACE::Bool32 pushDescriptor_                         = {},
                                                          void *                       pNext_                                  = nullptr ) VULKAN_HPP_NOEXCEPT
       : pNext{ pNext_ }
       , globalPriorityQuery{ globalPriorityQuery_ }
@@ -92577,6 +92578,7 @@ namespace VULKAN_HPP_NAMESPACE
       , pipelineProtectedAccess{ pipelineProtectedAccess_ }
       , pipelineRobustness{ pipelineRobustness_ }
       , hostImageCopy{ hostImageCopy_ }
+      , pushDescriptor{ pushDescriptor_ }
     {
     }
 
@@ -92729,6 +92731,12 @@ namespace VULKAN_HPP_NAMESPACE
       hostImageCopy = hostImageCopy_;
       return *this;
     }
+
+    VULKAN_HPP_CONSTEXPR_14 PhysicalDeviceVulkan14Features & setPushDescriptor( VULKAN_HPP_NAMESPACE::Bool32 pushDescriptor_ ) VULKAN_HPP_NOEXCEPT
+    {
+      pushDescriptor = pushDescriptor_;
+      return *this;
+    }
 #endif /*VULKAN_HPP_NO_STRUCT_SETTERS*/
 
     operator VkPhysicalDeviceVulkan14Features const &() const VULKAN_HPP_NOEXCEPT
@@ -92747,6 +92755,7 @@ namespace VULKAN_HPP_NAMESPACE
 #  else
     std::tuple<VULKAN_HPP_NAMESPACE::StructureType const &,
                void * const &,
+               VULKAN_HPP_NAMESPACE::Bool32 const &,
                VULKAN_HPP_NAMESPACE::Bool32 const &,
                VULKAN_HPP_NAMESPACE::Bool32 const &,
                VULKAN_HPP_NAMESPACE::Bool32 const &,
@@ -92791,7 +92800,8 @@ namespace VULKAN_HPP_NAMESPACE
                        maintenance6,
                        pipelineProtectedAccess,
                        pipelineRobustness,
-                       hostImageCopy );
+                       hostImageCopy,
+                       pushDescriptor );
     }
 #endif
 
@@ -92812,7 +92822,7 @@ namespace VULKAN_HPP_NAMESPACE
              ( vertexAttributeInstanceRateZeroDivisor == rhs.vertexAttributeInstanceRateZeroDivisor ) && ( indexTypeUint8 == rhs.indexTypeUint8 ) &&
              ( dynamicRenderingLocalRead == rhs.dynamicRenderingLocalRead ) && ( maintenance5 == rhs.maintenance5 ) && ( maintenance6 == rhs.maintenance6 ) &&
              ( pipelineProtectedAccess == rhs.pipelineProtectedAccess ) && ( pipelineRobustness == rhs.pipelineRobustness ) &&
-             ( hostImageCopy == rhs.hostImageCopy );
+             ( hostImageCopy == rhs.hostImageCopy ) && ( pushDescriptor == rhs.pushDescriptor );
 #  endif
     }
 
@@ -92845,6 +92855,7 @@ namespace VULKAN_HPP_NAMESPACE
     VULKAN_HPP_NAMESPACE::Bool32        pipelineProtectedAccess                = {};
     VULKAN_HPP_NAMESPACE::Bool32        pipelineRobustness                     = {};
     VULKAN_HPP_NAMESPACE::Bool32        hostImageCopy                          = {};
+    VULKAN_HPP_NAMESPACE::Bool32        pushDescriptor                         = {};
   };
 
   template <>
