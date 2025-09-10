@@ -7247,7 +7247,7 @@ namespace VULKAN_HPP_NAMESPACE
     // std::expected-look alike
     bool has_value() const VULKAN_HPP_NOEXCEPT
     {
-      return result == vk::Result::eSuccess;
+      return result == Result::eSuccess;
     }
 
     T const * operator->() const VULKAN_HPP_NOEXCEPT
